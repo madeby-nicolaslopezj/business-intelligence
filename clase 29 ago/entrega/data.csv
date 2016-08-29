@@ -1,0 +1,11 @@
+Tid;Refund;Marital Status;Taxable Income;Evade
+1;Yes;Single;125K;No
+2;No;Married;100K;No
+3;No;Single;70K;No
+4;Yes;Married;120K;No
+5;No;Divorced;95K;Yes
+6;Yes;Married;60K;No
+7;No;Divorced;220K;Yes
+8;No;Married;85K;Yes
+9;Yes;Married;75K;No
+10;No;Single;90K;Yes

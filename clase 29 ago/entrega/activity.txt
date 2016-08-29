@@ -1,0 +1,35 @@
+Week 5 - Activity 4
+
+Joaquin Díaz
+Nicolás López
+
+-- Using R. Code in Code.R.
+
+Apply Naive Bayes to determine if the IRS should put attention in the following people:
+
+1) X=(Refund = no, Married, Income = 105 K)   
+2) X=(Refund = Yes, Divorced, Income = 127 K)
+
+Results:
+
+Input data probabilities
+
+No           Yes          Evades
+9.993387e-01 0.0006612793 No
+7.630368e-01 0.2369632229 No
+6.162409e-01 0.3837591135 No
+9.997309e-01 0.0002690637 No
+2.579687e-03 0.9974203126 Yes
+9.998057e-01 0.0001942657 No
+1.186278e-07 0.9999998814 Yes
+7.845249e-01 0.2154751388 Yes
+9.998548e-01 0.0001452249 No
+6.423848e-01 0.3576151980 Yes
+
+1) No: 0.7452204 Yes: 0.2547796
+
+Probabilities of evading are 25.48%. We think the IRS should investigate because there is a case that had 21% probabilities of evading and it was evading.
+
+2) No: 0.6743813 Yes: 0.3256187
+
+Probabilities of evading are 32.56%. We think the IRS should investigate because there is a case that had 21% probabilities of evading and it was evading.

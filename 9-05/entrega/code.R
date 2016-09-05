@@ -1,5 +1,8 @@
 # Load libraries
 library(rpart)
+library(e1071)
+library(discretization)
+library(infotheo)
 
 # Set the seed
 set.seed(1111)
@@ -49,3 +52,19 @@ accuracy3 <- results[3] / sum(results[3,]) # accuracy 30%
 #      => husband ocupation: not 1
 #   => child ever born: 3 or more
 #      => Wife's age < 33,5
+
+
+# with naiveBayes
+bayes <- naiveBayes(contraceptive.method ~ ., data=trainData)
+
+# Predictions
+predictionsBayes <- predict(bayes, testData, type="class")
+
+# Compare
+resultsBayes <- table(testData$contraceptive.method, predictionsBayes)
+accuracyBayes <- sum(diag(resultsBayes)) / sum(resultsBayes) # accuracy 50%
+accuracyBayes1 <- resultsBayes[1] / sum(resultsBayes[1,]) # accuracy 52%
+accuracyBayes2 <- resultsBayes[2] / sum(resultsBayes[2,]) # accuracy 19%
+accuracyBayes3 <- resultsBayes[3] / sum(resultsBayes[3,]) # accuracy 22%
+
+

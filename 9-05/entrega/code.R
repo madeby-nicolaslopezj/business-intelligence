@@ -26,7 +26,7 @@ testData<-data[-sub, ] #30 % for testing
 # Create the tree
 tree <- rpart(contraceptive.method ~ ., data=trainData)
 plot(tree,margin=0.2)
-text (tree, use.n = T, pretty = TRUE)
+text(tree, use.n = T, pretty = TRUE)
 title("Training tree")
 
 # Predictions
@@ -40,5 +40,12 @@ accuracy2 <- results[2] / sum(results[2,]) # accuracy 27%
 accuracy3 <- results[3] / sum(results[3,]) # accuracy 30%
 
 
-
-
+# Child ever born: >= 1
+# Wife's age: < 37,5
+# Wifes education: Case 1,2,3
+#   => child ever born: >= 3
+# Wifes education: Case 4
+#   => child ever born: case 2 or less
+#      => husband ocupation: not 1
+#   => child ever born: 3 or more
+#      => Wife's age < 33,5

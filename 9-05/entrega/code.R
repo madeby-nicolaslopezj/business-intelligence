@@ -8,7 +8,7 @@ set.seed(1111)
 setwd("/Users/nicolaslopezj/Code/r/bi/9-05")
 
 # Set data
-data <- read.csv("cmc.data", header = FALSE, sep=",")
+data <- read.csv("cmc.data", header = TRUE, sep=",")
 data$V10 <- factor(data$V10)
 
 # Generate training and testing set

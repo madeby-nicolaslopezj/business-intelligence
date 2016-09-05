@@ -26,12 +26,9 @@ title("Training tree")
 predictions <- predict(tree, testData, type="class")
 
 # Compare
-table(testData$V10, predictions)
+results <- table(testData$V10, predictions)
+accuracy <- sum(diag(results)) / sum(results)
 
-# Prune
-prune.rpart.tree <- prune(rpart.tree, cp=0.01)
-plot(prune.rpart.tree,margin=0.2)
-text (prune.rpart.tree, use.n = T, pretty = TRUE)
 
 
 

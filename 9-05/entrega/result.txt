@@ -1,0 +1,73 @@
+Joaquín Díaz
+Nicolás López
+
+Activity 6
+
+1. Train a decision tree using the training set and give the percentage of
+correct classifications (Accuracy) by evaluating the model with the test set.
+Give the resulting tree.
+
+    1   2   3
+1 137  15  45
+2  25  34  33
+3  46  26  81
+
+2. Based on the confusion matrix of the previous question, what kind of
+contraceptive method is more difficult for the tree to predict? Justify your
+answer.
+
+Total model: 57%
+Method 1: 69%
+Method 2: 27%
+Method 3: 30%
+
+The method 2, because it has 27% of probability.
+
+3. Write in words the classification rules that are deduced from the tree for
+the type of contraceptive method = 3.
+
+Child ever born: >= 1
+  => Wife's age: < 37,5 -> Type: 3
+  => Wifes education: Case 1,2,3
+    => child ever born: >= 3 -> Type: 3
+  => Wifes education: Case 4
+    => child ever born: case 2 or less
+       => husband ocupation: not 1 -> Type: 3
+    => child ever born: 3 or more
+       => Wife's age < 33,5 -> Type: 3
+
+4. Train a naive Bayes classifier using the training set and give the percentage
+of correct classifications by evaluating the model with the test set. Based on
+the confusion matrix, what kind of contraceptive method is more difficult for
+the naive Bayes classifier to predict? Justify your answer.
+
+    1   2   3
+1 104  44  49
+2  18  47  27
+3  35  44  74
+
+Total model: 50%
+Method 1: 52%
+Method 2: 19%
+Method 3: 23%
+
+The method 2, because it has 19% of probability.
+
+5. Train a naive Bayes classifier using the training set but only using the
+attributes that appear in the tree obtained in Question 1. Give the percentage
+of correct classification when evaluating the model with the test set. Does the
+performance improve when compared with what was obtained in question 4?
+
+Attributes: children.ever.born, wife.age, wife.education, wife.work, husband.occupation
+
+    1   2   3
+1 115  26  56
+2  14  39  39
+3  34  30  89
+
+Total model: 54%
+Method 1: 58%
+Method 2: 15%
+Method 3: 22%
+
+In general yes, but by method it only improves with the method 1.

@@ -68,3 +68,17 @@ accuracyBayes2 <- resultsBayes[2] / sum(resultsBayes[2,]) # accuracy 19%
 accuracyBayes3 <- resultsBayes[3] / sum(resultsBayes[3,]) # accuracy 22%
 
 
+# with naiveBayes2
+bayes2 <- naiveBayes(contraceptive.method ~ children.ever.born + wife.age + wife.education + wife.work + husband.occupation, data=trainData)
+
+# Predictions
+predictionsBayes2 <- predict(bayes2, testData, type="class")
+
+# Compare
+resultsBayes2 <- table(testData$contraceptive.method, predictionsBayes2)
+accuracyBayes2 <- sum(diag(resultsBayes2)) / sum(resultsBayes2) # accuracy 54%
+accuracyBayes21 <- resultsBayes2[1] / sum(resultsBayes2[1,]) # accuracy 58%
+accuracyBayes22 <- resultsBayes2[2] / sum(resultsBayes2[2,]) # accuracy 15%
+accuracyBayes23 <- resultsBayes2[3] / sum(resultsBayes2[3,]) # accuracy 22%
+
+

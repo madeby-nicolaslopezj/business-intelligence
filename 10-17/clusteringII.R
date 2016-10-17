@@ -119,4 +119,3 @@ title("Results using Silhouette index")
 library(flexclust)
 clusterResult=clusters[2,]
 randIndex(clusterResult$cluster,iris[,5], correct=FALSE)
-
